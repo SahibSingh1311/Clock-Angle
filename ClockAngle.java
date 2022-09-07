@@ -3,10 +3,10 @@ import java.util.*;
 public class ClockAngle{								//1 min => 360/60 =6deg
 public static void main(String[] args){							//h->12 hrs =>360deg
 	int hour=3, minute=0;								//1 min => 360/60*12 = 0.5 deg
-	System.out.println(calcAngle(hour,minute));						//	     ^   ^
+	System.out.println(calcAngle(hour,minute));						//     ^   ^
 }											//	    min  hour
 static int calcAngle(int h, int m){
-	if(h>12||m>60||h<0||m<0){
+	if(h>12||m>60||h<0||m<0){							// Checking Incorrect inputs
 		System.out.println("Incorrect Input!!");
 	}
 	if(h==12)
@@ -18,7 +18,7 @@ static int calcAngle(int h, int m){
 			h-=12;
 	}
 	
-	int minuteAngle = 6*m;
+	int minuteAngle = 6*m;						// Calculating the minute angle using the above information
 	int hourAngle = (int)(0.5*(h*60+m));
 
 	int angle= minuteAngle>hourAngle ? minuteAngle-hourAngle: hourAngle-minuteAngle;
